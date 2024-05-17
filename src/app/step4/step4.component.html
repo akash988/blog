@@ -1,0 +1,123 @@
+<div *ngIf="currentStep===4" class="container ">
+  <br>
+  <h2 class="topic">CONTACT DETAILS</h2>
+
+  <label class="emptxt">Please tell us where we can reach you(other than your TelNophone).</label>
+
+  <form [formGroup]="step4Form">
+    <br>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+      <input formControlName="TelNo" pattern="[0-9]{10}" type="text" class="form-control" id="exampleFormControlInput1"
+        placeholder="Home Telephone"
+        [ngClass]="{ 'invalid-input': (step4Form.controls['TelNo'].hasError('required') && step4Form.controls['TelNo'].touched) ||
+        (step4Form.controls['TelNo'].hasError('pattern') && step4Form.controls['TelNo'].dirty) }">
+        
+        <span class="error-msg" *ngIf="(step4Form.controls['TelNo'].hasError('pattern') && step4Form.controls['TelNo'].dirty) || 
+        step4Form.controls['TelNo'].hasError('required') && step4Form.controls['TelNo'].touched">*please enter valid Telephone number</span>
+            
+    </div>
+     
+    </div>
+    <br> 
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+      <input formControlName="WorkNo" pattern="[0-9]{10}" type="text" class="form-control" id="exampleFormControlInput1"
+        placeholder="Work Telephone"
+        [ngClass]="{ 'invalid-input': (step4Form.controls['WorkNo'].hasError('required') && step4Form.controls['WorkNo'].touched) ||
+        (step4Form.controls['WorkNo'].hasError('pattern') && step4Form.controls['WorkNo'].dirty) }">
+        
+        <span class="error-msg" *ngIf="(step4Form.controls['WorkNo'].hasError('pattern') && step4Form.controls['WorkNo'].dirty) || 
+        step4Form.controls['WorkNo'].hasError('required') && step4Form.controls['WorkNo'].touched">*please enter valid Telephone number</span>
+       
+        
+    </div>
+    </div>
+    <br>
+
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+      <input formControlName="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="text" class="form-control" id="exampleFormControlInput1"
+        placeholder="Email Address"
+        [ngClass]="{ 'invalid-input': (step4Form.controls['Email'].hasError('required') && step4Form.controls['Email'].touched) ||
+        (step4Form.controls['Email'].hasError('pattern') && step4Form.controls['Email'].dirty) }">
+        
+        <span class="error-msg" *ngIf="(step4Form.controls['Email'].hasError('pattern') && step4Form.controls['Email'].dirty) || 
+        step4Form.controls['Email'].hasError('required') && step4Form.controls['Email'].touched">*please enter valid Email</span>
+       
+        
+    </div>
+    </div>
+<br><br>
+    <h2 class="topic">Home Address</h2>
+
+    <label class="emptxt">Please enter the address where you currently live.</label>
+<br><br>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+      <input formControlName="Add1" type="text" class="form-control" id="exampleFormControlInput1"
+        placeholder="Address Line 1">
+        <span class="error-msg" *ngIf="step4Form.controls['Add1'].hasError('required') && step4Form.controls['Add1'].touched">*This Field is required</span>
+    </div>
+    </div>
+    <br>
+
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Address Line 2">
+    </div>
+    </div>
+    <br>
+    
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+      <input formControlName="City" type="text" class="form-control" id="exampleFormControlInput1"
+        placeholder="Town/City/Suburb">
+        <span class="error-msg" *ngIf="step4Form.controls['City'].hasError('required') && step4Form.controls['City'].touched">*This Field is required</span>
+    </div>
+    </div>
+    <br>
+
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+      <input formControlName="Postal"  pattern="[0-9]{6}" type="text" class="form-control" id="exampleFormControlInput1"
+        placeholder="Postal Code"
+        [ngClass]="{ 'invalid-input': (step4Form.controls['Postal'].hasError('required') && step4Form.controls['Postal'].touched) ||
+        (step4Form.controls['Postal'].hasError('pattern') && step4Form.controls['Postal'].dirty) }">
+        
+        <span class="error-msg" *ngIf="(step4Form.controls['Postal'].hasError('pattern') && step4Form.controls['Postal'].dirty) || 
+        step4Form.controls['Postal'].hasError('required') && step4Form.controls['Postal'].touched">*please enter valid Postal Code</span>
+<br>Postal
+        
+    </div>
+    </div>
+    <br>
+
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+      <input formControlName="Year" type="number" class="form-control" id="exampleFormControlInput1"
+        placeholder="Years at cureent Address">
+        <span class="error-msg" *ngIf="step4Form.controls['Year'].hasError('required') && step4Form.controls['Year'].touched">*This Field is required</span>
+    </div>
+    </div>
+    <br>
+    
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-12">
+        <div class="emptxt">
+          <input formControlName="ch4" class="form-check-input" type="checkbox" value="">
+            <span style="text-indent: 0.1cm;">
+        Is your Postal Adrress the same as above?
+      </span><br>
+      <span *ngIf="step4Form.controls['ch4'].invalid && step4Form.controls['ch4'].touched" class="error-msg">
+
+        You must agree to the terms and conditions.
+
+    </span>
+        </div>
+      </div>     
+    </div>
+
+  </form>
+
+</div>

@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import url('../assets/Font/'); */
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tfgbtn {
+    background-color: rgb(94, 23, 94);
+    color: white;
+    width: max-content;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+    cursor: context-menu;
+    padding: 10px;
+    /* height: 40px; */
+    /* width: 320px; */
+    /* font-size: 14px; */
+}
+
+/* .tfgbtn{
+    background-color: rgb(94, 23, 94);
+    color:white;
+    width:320px;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+    height:40px;
+    font-size: 14px;
+    cursor: context-menu;
+} */
+
+/* .div-title {
+
+    border-radius: 5px;
+  
+    background: rgb(75, 24, 75);
+  
+
+  
+    width: 200px;
+  
+    height: 30px;
+  
+    color: white;
+  
+    text-align: center;  
+    margin-top: 50px;
+  
+  } */

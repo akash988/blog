@@ -1,0 +1,354 @@
+<div *ngIf="currentStep===6 && step6===1" class="container ">
+
+    <br>
+    <h5 class="topic">PERMISSIONS TO PERSONALISED OFFERS & UPDATES</h5>
+    <form [formGroup]="step61Form">
+        <div class="emptxt">
+        <label> AS a TFG Account customer, you'll qualify for personalised offers and updates from all of TFG's brands,
+            including cellular, insurance and publishing offers. Do you agree to us sending you these offers</label>
+            <br><br>
+        <div class="darkGrey">
+            <div class="row justify-content-md-center">
+                <div class="col">
+                <span>SMS</span>
+                </div>
+                <div class="col">
+                <input type="checkbox" formControlName="ch1" >
+                <span style="text-indent: 0.1cm;">
+                    Yes
+                  </span>
+                </div>    
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col">
+                    <span>Email</span>
+                    </div>
+                    <div class="col">
+                    <input type="checkbox" formControlName="ch2" >
+                    <span style="text-indent: 0.1cm;" >
+                        Yes
+                      </span>
+                    </div>   
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col">
+                    <span>Telephone</span>
+                    </div>
+                    <div class="col">
+                    <input type="checkbox" formControlName="ch3" >
+                    <span style="text-indent: 0.1cm;" >
+                        Yes
+                      </span>
+                    </div>       
+            </div>
+            
+            <div class="row justify-content-md-center">
+                <div class="col">
+                    <span>Mail/Post</span>
+                    </div>
+                    <div class="col">
+                    <input type="checkbox" formControlName="ch4" >
+                    <span style="text-indent: 0.1cm;" >
+                        Yes
+                      </span>
+                    </div>      
+            </div>
+        </div>
+        <br>
+        <label>Do you agree that TF may share your personal information with selected business partners to market their
+            products to you?</label>
+        <br><br>
+         <div class="row justify-content-md-center">
+            <div class="col">
+                <span class="darkGrey">Third Party Marketing</span>
+                </div>
+                <div class="col">
+                <input type="checkbox" formControlName="ch5" >
+                <span style="text-indent: 0.1cm;" >
+                    Yes
+                  </span>
+                </div>       
+            </div>
+        </div>
+        <div class="actions">
+           
+            <button class="btn2 btn" (click)="next()" type="button" name="next">Next</button>
+        </div>
+    </form>
+
+</div>
+<div *ngIf="currentStep===6 && step6===2" class="container">
+    <br>
+    <h3 class="topic">OPTIONAL PRODUCTS WITH INSURANCE BENEFITS</h3>
+
+    <h6 class="emptxt">Please indicate if you would like to take up one of our optional products which include insurance benefits. The
+        monthly premium for the insurance will be billed to your TFG Account. Click on the product logo for pricing and
+        product summary.
+
+        Foschini Retail Group (Pty) Ltd is an authorised financial services provider.</h6><br>
+
+    <form [formGroup]="step62Form">
+       <div class="emptext" style="font-size: 13px;">
+        <div class="row">
+            
+            <div class="emptxt" style="font-size: 13px;">
+                <div class="row" style="margin-bottom: 11px;">
+                    <div class="form-group col-md-12">
+                    <div style="display: flex;">
+                    <div class="col">Account Balance Protection Insurer : Guardrisk Life Ltd</div>
+                    <div class="col"><img src="assets/Img2.png" class="img-fluid" alt="..."></div>
+                    <div class="col">
+                        <input type="radio" formControlName="ch6" value="yes"> Yes <br>
+                        <input type="radio" formControlName="ch6" value="no"> No
+                    </div>
+                    <div class="col"><a href="#">Click here for full Policy and Disclosure Notice</a></div>
+                </div>
+                    </div>
+                </div>
+            </div>
+            <div class="emptxt" style="font-size: 13px;">
+                <div class="row" style="margin-bottom: 11px;">
+                    <div class="form-group col-md-12">
+                    <div style="display: flex;">
+                    <div class="col">Funeral Plan Insurer : Guardrisk Life Ltd</div>
+                    <div class="col"><img src="assets/Img3.png" class="img-fluid" alt="..."></div>
+                    <div class="col">
+                        <input  type="radio" formControlName="ch7" value="yes">Yes<br>
+                        <input type="radio" formControlName="ch7" value="no">No
+                    </div>
+                    <div class="col"><a href="#">Click here for full Policy and Disclosure Notice</a></div>
+                </div>
+                    </div>
+                </div>
+            </div>
+            <div class="emptxt" style="font-size: 13px;">
+                <div class="row" style="margin-bottom: 11px;">
+                    <div class="form-group col-md-12">
+                    <div style="display: flex;">
+                    <div class="col" >TFG Legal Plan Gold Insurance Benefits underwritten by Guardriek insurance Co Ltd</div>
+                    <div class="col"><img src="assets/Img2.png" class="img-fluid" alt="..."></div>
+                    <div class="col">
+                        <input  type="radio" formControlName="ch8" value="yes">Yes<br>   
+                        <input type="radio" formControlName="ch8" value="no">No
+                    </div>
+                    <div class="col"><a href="#">Click here for full Policy and Disclosure Notice</a></div>
+                </div>
+            </div>  
+                </div></div>         
+        </div>
+       </div>
+<br>
+     <div class="row justify-content-md-center">
+      <div class="col col-lg-12">
+        <div class="emptxt">
+          <input formControlName="ch9" class="form-check-input" type="checkbox" value="">
+            <span style="text-indent: 0.1cm;">
+                I confirm that I have read, understood & accepted the insurance policy & disclosure notice/s and/or
+                Membership Guide (as applicable), & in particular, the policy exclusions in respect of the insurance
+                benefits and /or products selected
+      </span><br>
+      <span *ngIf="step61Form.controls['ch9'].invalid && step61Form.controls['ch9'].touched" class="error-msg">
+        You must agree to the terms and conditions.
+    </span>
+        </div>
+      </div>     
+    </div>
+    <br>
+        <h5 class="topic" style="color:grey">Optional Value-Affored Service</h5>
+
+        <h6 class="emptxt">Please indicate if you would like to activate our optional alert service</h6>
+        <div class="emptxt" style="font-size: 13px;">
+        <div class="row">
+            <div class="col" style="text-align: left;">Fraud Alert Service</div>
+            <div class="col"><img src="assets/Img5.png" class="img-fluid" alt="..."></div>
+            <div class="col">
+                <input  type="radio" formControlName="ch10" value="yes">Yes<br>
+                <input type="radio" formControlName="ch10" value="no">No
+            </div>
+            <div class="col"><a href="#">Click here for full Policy and Disclosure Notice</a></div>
+        </div>
+        </div>
+        <div class="actions">
+            <button class="btn1 btn" (click)="previous()" type="button" name="previous">Back</button>
+            <button class="btn2 btn" (click)="next()" type="button" name="next">Next</button>
+        </div>
+    </form>
+</div>
+<div *ngIf="currentStep===6 && step6===3" class="container">
+    <br>
+    <h2 class="topic">OPTIONAL MAGAZINES</h2>
+    <h6 class="emptxt" style="text-align: justify;font-size: 10px;">Please! choose whether you would like to subscribe be to any of our optional magazines listed below. The monthly
+        subscription for the magazines will be billed to your TFG account. Click on the magazine cover for more
+        information and magazine price. Foschini Retail Group (Pvt) Ltd is an authorized financial services provider.
+    </h6>
+    <br>
+    <style>
+        .coltxt{
+            font-weight: lighter;
+            color: grey;
+            font-size: 12px;
+        }
+    </style>
+    <div class="coltxt">
+        <div class="row" style="margin-bottom: 11px;">
+            <div class="form-group col-md-6">
+                <div style="display: flex;">
+                    <div class="col" style="margin-top: 10px;">Platinum Club</div>
+                    <div class="col"><img style="height: 61px;" src="assets/q.png" class="img-fluid" alt="..."></div>
+                    <div class="col" style="margin-top: 12px; margin-left: 2px;">
+                            <input  type="radio" formControlName="ch10" value="yes"> Yes
+                            <input style="margin-left: 3px;" type="radio" formControlName="ch10" value="no"> No
+                    </div>   
+                </div>   
+                    <div class="col-md-12">
+                        <h6 style="margin-top: 7px;font-size: 7px;">By selecting yes i confirmed that i have read, understood and accepted the insurance policy and Disclosure Notice & in perticular, the policy exclusions in respect of the insurance benefits that forms part of the platinum club.</h6>
+                    </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div style="display: flex;">
+                    <div class="col"  style="margin-top: 10px;">MyKitchen</div>
+                    <div class="col"><img style="height: 61px;" src="assets/kitchen.png" class="img-fluid" alt="..."></div>                 
+                    <div class="col" style="margin-top: 12px; margin-left: 2px;">
+                         <input  type="radio" formControlName="ch10" value="yes"> Yes
+                        <input  style="margin-left: 3px;" type="radio" formControlName="ch10" value="no"> No                 
+                </div>            
+                </div>
+    
+            </div>
+        </div>
+
+        <div class="row" style="margin-bottom: 11px;">
+            <div class="form-group col-md-6">
+                <div style="display: flex;">
+                    <div class="col" style="margin-top: 10px;">Club</div>
+    
+                    <div class="col"><img style="height: 61px;" src="assets/club.png" class="img-fluid" alt="..."></div>
+    
+                    <div class="col" style="margin-top: 12px; margin-left: 2px;">
+                            <input type="radio" formControlName="ch10" value="yes"> Yes
+                            <input style="margin-left: 3px;"type="radio" formControlName="ch10" value="no"> No
+                    </div>   
+                </div>   
+                    <div class="col-md-12">
+    
+                        <h6 style="margin-top: 7px;font-size: 7px;">By selecting yes i confirmed that i have read, understood and accepted the insurance policy and Disclosure Notice & in perticular, the policy exclusions in respect of the insurance benefits that forms part of the club.</h6>
+    
+                    </div>
+    
+            </div>
+            <div class="form-group col-md-6">
+                <div style="display: flex;">
+                    <div class="col" style="margin-top: 10px;">Living Space</div>
+                    <div class="col"><img style="height: 61px;" src="assets/living space.png" class="img-fluid" alt="..."></div>                 
+                    <div class="col" style="margin-top: 12px; margin-left: 2px;">
+                         <input  type="radio" formControlName="ch10" value="yes"> Yes
+                        <input  style="margin-left: 3px;" type="radio" formControlName="ch10" value="no"> No                 
+                </div>            
+                </div>
+    
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 11px;">
+            <div class="form-group col-md-6">
+                <div style="display: flex;">
+                    <div class="col"  style="margin-top: 10px;">Super Club</div>
+    
+                    <div class="col"><img src="assets/super.png" class="img-fluid" alt="..."></div>
+    
+                    <div class="col" style="margin-top: 12px; margin-left: 2px;">
+                            <input type="radio" formControlName="ch10" value="yes"> Yes
+                            <input style="margin-left: 3px;" type="radio" formControlName="ch10" value="no"> No
+                    </div>   
+                </div>   
+                    <div class="col-md-12">
+    
+                        <h6 style="margin-top: 7px;font-size: 7px;">By selecting yes i confirmed that i have read, understood and accepted the insurance policy and Disclosure Notice & in perticular, the policy exclusions in respect of the insurance benefits that forms part of the Super club.</h6>
+    
+                    </div>
+    
+            </div>
+            <div class="form-group col-md-6">
+                <div style="display: flex;">
+                    <div class="col" style="margin-top: 10px;">Man</div>
+                    <div class="col"><img style="height: 61px;" src="assets/man.png" class="img-fluid" alt="..."></div>                 
+                    <div class="col" style="margin-top: 12px; margin-left: 2px;">
+                         <input  type="radio" formControlName="ch10" value="yes"> Yes
+                        <input style="margin-left: 3px;" type="radio" formControlName="ch10" value="no"> No                 
+                </div>            
+                </div>
+    
+            </div>
+        </div> 
+
+        <div class="row" style="margin-bottom: 16px;">
+            <div class="form-group col-md-6">
+                <div class="kidsbox" style="display: flex;">
+                    <div class="col" style="margin-top: 10px;">Kids Only</div>
+    
+                    <div class="col"><img style="height: 61px;" src="assets/kids.png" class="img-fluid" alt="..."></div>
+    
+                    <div class="col" style="margin-top: 12px;margin-left: 2px;">
+                            <input  type="radio" formControlName="ch10" value="yes"> Yes
+                            <input style="margin-left: 3px;" type="radio" formControlName="ch10" value="no"> No
+                    </div>   
+                </div>   
+            
+            </div>
+            <div class="form-group col-md-6">
+                <div style="display: flex;">
+                    <div class="col" style="margin-top: 10px;">Sports Club</div>
+                    <div class="col"><img style="height: 61px;" src="assets/sports.png" class="img-fluid" alt="..."></div>                 
+                    <div class="col" style="margin-top: 12px;margin-left: 2px;">
+                         <input  type="radio" formControlName="ch10" value="yes"> Yes
+                        <input style="margin-left: 3px;" type="radio" formControlName="ch10" value="no"> No                 
+                </div>            
+                </div>
+    
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 11px;">
+            <div class="form-group col-md-6">
+                <div class="kidsbox" style="display: flex;">
+                    <div class="col"  style="margin-top: 10px;">ClubX</div>
+    
+                    <div class="col"><img  style="height: 61px;" src="assets/clubX.png" class="img-fluid" alt="..."></div>
+    
+                    <div class="col" style="margin-top: 12px;margin-left: 2px;">
+                            <input  type="radio" formControlName="ch10" value="yes"> Yes
+                            <input style="margin-left: 3px;" type="radio" formControlName="ch10" value="no"> No
+                    </div>   
+                </div>   
+    
+            </div>
+            <div class="form-group col-md-6">
+                <div style="display: flex;">
+                    <div class="col"  style="margin-top: 10px;">Soccer Club</div>
+                    <div class="col"><img style="height: 61px;" src="assets/soccer.png" class="img-fluid" alt="..."></div>                 
+                    <div class="col" style="margin-top: 12px;margin-left: 2px;">
+                         <input  type="radio" formControlName="ch10" value="yes"> Yes
+                        <input style="margin-left: 3px;" type="radio" formControlName="ch10" value="no"> No                 
+                </div>            
+                </div>
+    
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 11px;">
+            <div class="form-group col-md-12">
+                <div style="display: flex;">
+                    <div class="col" style="margin-top: 19px;">Balanced Life</div>
+    
+                    <div class="col"><img style="height: 61px;" src="assets/balanced.png" class="img-fluid" alt="..."></div>
+    
+                    <div class="col" style="margin-top: 19px;margin-left: 2px;">
+                            <input  type="radio" formControlName="ch10" value="yes"> Yes
+                            <input style="margin-left: 3px;" type="radio" formControlName="ch10" value="no"> No
+                    </div>   
+                </div>   
+    
+            </div>
+        </div>
+    </div>
+        <label class="emptxt" style="font-size: 11px;text-align: justify;">* You may only subscribe to one of the following magazines:Platinum club, club or super club. T&C's apply to all magazines benefits,compititions and subscriptions.The death benefit that form part of club, platinum, super club is underwritten by Guradrisk life limited, and authorised financial service provider(FSE 76) and licensed life insurer in terms of the insurance act 18 of 2017. </label>
+    
+    <button class="btn5 btn" (click)="previous()" type="button" name="previous">Back</button>
+</div>

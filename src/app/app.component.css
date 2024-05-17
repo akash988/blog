@@ -1,0 +1,262 @@
+.actions {
+  position: relative;
+  left: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: rgb(91, 180, 91);
+  padding: 10px 20px;
+  justify-content: center;
+  margin-right: 20px;
+  margin-right: 35px;
+}
+.step-label{
+  margin-left: 50px;
+  font-size: small;
+  overflow: visible;
+}
+
+.ulhead {
+  white-space: nowrap;
+  height: 1em;
+  width: 100%;
+  margin-right: 100px;
+  padding-left: 4rem;
+}
+
+
+.lihead {
+  display: inline-flex;
+  width: 157px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+}
+
+.btn3 {
+  background-color: rgb(91, 180, 91);
+  padding: 10px 20px;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px;
+  margin-left: 120px;
+}
+
+.btn4 {
+
+  background-color: rgb(91, 180, 91);
+  padding: 10px 20px;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px;
+  left: 600px
+}
+
+.stepper-container {
+  width: fit-content; 
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;  
+  flex-direction: column;
+}
+
+.steps {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  width: 96%;
+}
+
+.step {
+  margin-left: 80px;
+}
+
+.stepcol {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  background-color: whitesmoke;
+  z-index: -1;
+}
+
+.step-number {
+  border: 1px solid rgb(94, 23, 94);
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  margin: auto;
+}
+
+.step-number.active {
+  background-color:black;
+  color:black;
+}
+.step-number.completed{
+  background-color:  rgb(94, 23, 94);
+  color: white;
+}
+
+.step-label {
+
+  font-size: 14px;
+}
+.th-line{
+
+  border-bottom: 1px dashed grey;
+
+  height: 16px;
+
+  width: 58%;
+
+  position: absolute;
+
+  margin-left: 90px;
+
+  z-index: -1;
+
+}
+
+
+.head-label{
+  font-size: small;
+  font-weight: 500;
+  margin-bottom:10px ;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  --bs-gutter-y: 0;
+  padding-right: calc(var(--bs-gutter-x) * 3.5);
+  padding-left: calc(var(--bs-gutter-x) * -0.5);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 820px) and (orientation: portrait) {
+  .container{
+      width:90% ;
+  }
+}
+
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+.stepper-container{
+  display: flex;
+  flex-direction: column;  
+  overflow: hidden
+}
+.stepper-container> .infoTabs{
+  display: flex; 
+  flex-direction: row;
+  }
+
+
+
+.ulhead[_ngcontent-ng-c2247303637] {
+  white-space: nowrap;
+  height: 1em;
+  width: fit-content;
+}
+
+.lihead {
+  display: inline-flex;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  width: 20%;
+}
+
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.darkGrey{
+  color:rgb(68, 68, 68)
+}
+.topic{
+ 
+  font-size: 22px;
+}
+.emptxt,select,input{
+  font-weight: lighter;
+ color: grey;
+ font-size: 12px;
+}
+.terms{
+  font-weight: lighter;
+ color: grey;
+ font-size: 11px;
+}
+.checkBorder{
+  border-color: rgb(83, 83, 83);
+}
+@media screen and (max-width: 420px) and (orientation: portrait) {
+
+  .emptxt,select,input{
+    font-weight: lighter;
+   color: grey;
+   font-size: 10px;
+  }
+  .topic{
+ 
+    font-size: 17px;
+  }
+  .smalltxt{
+    font-weight: lighter;
+  color: grey;
+  font-size: 11px;
+  }
+  .smallBtn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .cont{
+    margin-left: 20px;
+  }
+  .kidsbox{
+    margin-bottom: 15px;
+  }
+
+  .st{
+    margin-left: 12px;
+  }
+}
+
+.error-msg{
+  color: red;
+font-size: 10px;
+margin-top: 3px;
+
+}
+
+.invalid-input{
+
+  border: 1px solid red;
+
+}

@@ -1,0 +1,352 @@
+<div *ngIf="currentStep===1 && step===1" class="container">
+
+  <br>  
+  <h3 class="topic">PLEASE COMPLETE ALL FIELDS BELOW</h3>
+  <h6 class="emptxt">You will be able to shop at TFG retail brands on your TFG Account.</h6>
+  <br>
+  <form [formGroup]="step1Form">
+
+    <div >
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+        <select class="form-select"  [ngClass]="{ 'invalid-input': step1Form.controls['select'].hasError('required') && step1Form.controls['select'].touched }" aria-label="Default select example" formControlName="select">
+          <option value="" selected>Choose a Brand</option>
+          <option value="1">Foschini</option>
+          <option value="2">TotalSports</option>
+          <option value="3">Markham</option>
+          <option value="3">Exact!</option>
+          <option value="3">SportScene</option>
+          <option value="3">American Swiss</option>
+          <option value="3">Sterns</option>
+          <option value="3">Donna</option>
+          <option value="3">@home</option>
+          <option value="3">Mat and May</option>
+          <option value="3">Fabiani</option>
+          <option value="3">The FIX</option>
+          <option value="3">G-Star Raw(In Store Only)</option>
+          <option value="3">Hi</option>
+          <option value="3">Soda Bloc</option>
+          <option value="3">Archive</option>
+          <option value="3">Relay Jeans</option>
+          <option value="3">RFO</option>
+          <option value="3">Sneaker Factory</option>
+        </select>
+        <span class="error-msg" *ngIf="step1Form.controls['select'].hasError('required') && step1Form.controls['select'].touched">*This Field is required</span>
+      </div>
+    </div>
+  </div>
+<br>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+        <input type="text" pattern="[0-9]{12}" formControlName="num" class="form-control" 
+        [ngClass]="{ 'invalid-input': (step1Form.controls['num'].hasError('required') && step1Form.controls['num'].touched) ||
+        (step1Form.controls['num'].hasError('pattern') && step1Form.controls['num'].dirty) }"placeholder="RSA ID Number *">
+        
+        <span class="error-msg" *ngIf="(step1Form.controls['num'].hasError('pattern') && step1Form.controls['num'].dirty) || 
+        step1Form.controls['num'].hasError('required') && step1Form.controls['num'].touched">*please enter a valid 12 digits RSA ID</span>
+      </div>
+    </div>
+<br>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+        <select class="form-select"  [ngClass]="{ 'invalid-input': step1Form.controls['select2'].hasError('required') && step1Form.controls['select2'].touched }" formControlName="select2">
+          <option value="" selected>Title</option>
+          <option value="1">Mr.</option>
+          <option value="2">Mrs.</option>
+          <option value="3">Ms.</option>
+          <option value="4">Dr.</option>  
+        </select>
+        <span class="error-msg" *ngIf="step1Form.controls['select2'].hasError('required') && step1Form.controls['select2'].touched">*This Field is required</span>
+      </div>
+    </div>
+<br>
+<div class="row justify-content-md-center">
+  <div class="col col-lg-6">
+    <input type="text" pattern="[a-zA-Z ]*" formControlName="FName" class="form-control" 
+    [ngClass]="{ 'invalid-input': (step1Form.controls['FName'].hasError('required') && step1Form.controls['FName'].touched) ||
+        (step1Form.controls['FName'].hasError('pattern') && step1Form.controls['FName'].dirty) }" placeholder="First Name">
+        
+    
+    <span class="error-msg" *ngIf="step1Form.controls['FName'].hasError('required') && step1Form.controls['FName'].touched">*This Field is required</span>
+    <span class="error-msg" *ngIf="step1Form.controls['FName'].hasError('pattern') && step1Form.controls['FName'].dirty">*only alphabets are allowed</span>
+  </div>
+</div>
+<br>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+        <input type="text" pattern="[a-zA-Z ]*" formControlName="LName" class="form-control" 
+        [ngClass]="{ 'invalid-input': (step1Form.controls['LName'].hasError('required') && step1Form.controls['LName'].touched) ||
+        (step1Form.controls['LName'].hasError('pattern') && step1Form.controls['LName'].dirty) }" placeholder="Last Name">
+      <span class="error-msg" *ngIf="step1Form.controls['LName'].hasError('required') && step1Form.controls['LName'].touched">*This Field is required</span>
+      <span class="error-msg" *ngIf="step1Form.controls['LName'].hasError('pattern') && step1Form.controls['LName'].dirty">*only alphabets are allowed</span>  
+    </div>
+    </div>
+<br>   
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+        <input formControlName="num2" pattern="[0-9]{10}"  type="text" class="form-control"[ngClass]="{ 'invalid-input': (step1Form.controls['num2'].hasError('required') && step1Form.controls['num2'].touched) ||
+        (step1Form.controls['num2'].hasError('pattern') && step1Form.controls['num2'].dirty) }" placeholder="SA Cellphone">
+        <span class="error-msg" *ngIf="(step1Form.controls['num2'].hasError('pattern') && step1Form.controls['num2'].dirty) || 
+        step1Form.controls['num2'].hasError('required') && step1Form.controls['num2'].touched">*please enter valid 10 digits Cellphone number</span>
+      </div>
+    </div>
+    <br>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+        <input formControlName="name" type="text" class="form-control" [ngClass]="{ 'invalid-input': step1Form.controls['name'].hasError('required') && step1Form.controls['name'].touched }"placeholder="Promotion Code">
+        <span class="error-msg" *ngIf="step1Form.controls['name'].hasError('required') && step1Form.controls['name'].touched">*This Field is required</span>
+      </div>
+    </div>
+    <br>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-12" style="text-align: initial;">
+        <div class="terms">
+        <input formControlName="ch1" class="form-check-input checkBorder"  [ngClass]="{ 'invalid-input': step1Form.controls['ch1'].hasError('required') && step1Form.controls['ch1'].touched }" type="checkbox" value="">
+          <span style="text-indent: 0.1cm;">
+            I confirmed that I agreed to the bound of the Terms and conditions by TFG Account
+          </span>
+          <span *ngIf="step1Form.controls['ch1'].invalid && step1Form.controls['ch1'].touched" class="error-msg">
+            <br>You must agree to the terms and conditions.
+          </span>
+        </div>
+    </div>
+  </div>
+    
+
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-12" style="text-align: initial;">
+        <div class="terms">
+          <input formControlName="ch2" class="form-check-input checkBorder"  [ngClass]="{ 'invalid-input': step1Form.controls['ch2'].hasError('required') && step1Form.controls['ch2'].touched }" type="checkbox" value="">
+            <span style="text-indent: 0.1cm;">
+          I confirm that I agree to be bound by the terms and conditions for TFG's Account  
+          I confirm further that:
+          <br>
+          All information provided by me in this application is true, correct and complete;
+          <ul>
+            <li>
+              <span style="text-indent: 0cm;">I do not have any other pending applications for credit
+                outstanding;</span>
+            </li>
+            <li><span style="text-indent: 0cm;">I have not applied for debt review and am not under administration,
+                sequestration or curatorship;</span>
+            </li>
+            <li><span style="text-indent: 0cm;">The documents provided for proof of income purposes (if applicable) are
+                true and correct;</span>
+            </li>
+            <li><span style="text-indent: 0cm;">I consent to TFG contacting any credit bureau to obtain my credit
+                profile
+                history;</span>
+            </li>
+            <li><span style="text-indent: 0cm;">I consent to TFG collecting, retaining, sharing and processing my
+                personal
+                information for purposes of opening and maintaining a TFG Account</span>.</li>
+          </ul>
+          Click here to see how we process your personal information.
+        </span>
+        <span *ngIf="step1Form.controls['ch2'].invalid && step1Form.controls['ch2'].touched" class="error-msg">
+          <br>You must agree to the terms and conditions.
+        </span>
+    </div>
+      </div>
+    </div>
+
+    
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-12" style="text-align: initial;">
+        <div class="terms">
+          <input formControlName="ch3" class="form-check-input checkBorder"  [ngClass]="{ 'invalid-input': step1Form.controls['ch3'].hasError('required') && step1Form.controls['ch3'].touched }" type="checkbox" value="">
+            <span style="text-indent: 0.1cm;">
+          If I am not successful with this credit application, I give TFG permission to contact the credit bureau at a
+          later stage to offer me a TFG Account.
+        </span>
+        <span *ngIf="step1Form.controls['ch3'].invalid && step1Form.controls['ch3'].touched" class="error-msg">
+
+          <br>You must agree to the terms and conditions.
+        </span>
+        </div>
+    </div>
+  </div>
+  <br>
+  <div class="row" style="margin-left: 21px;">
+    <div class="col">
+      <button class="btn btn-primary" (click)="previous()" type="button" name="previous">Back</button>
+</div>
+<div class="col">
+  
+  <button class="btn btn-primary" (click)="next()" type="button" name="next">Next</button>
+</div>
+  </div>  </form>
+</div>
+
+
+
+
+
+
+<div *ngIf="currentStep===1 && step===2" class="container">
+  <br>
+  <label class="topic">PLEASE TELL US MORE ABOUT YOURSELF</label>
+  <form [formGroup]="step11Form">
+
+    <br>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+      <select class=" form-select" [ngClass]="{ 'invalid-input': step11Form.controls['dep1'].hasError('required') && step11Form.controls['dep1'].touched }" formControlName="dep1">
+        <option value="" selected>Maritial Status</option>
+        <option value="1">Married</option>
+        <option value="2">UnMarried</option>
+        <option value="3">Divorced</option>
+        <option value="4">Widowed</option>
+      </select>
+      <span class="error-msg" *ngIf="step11Form.controls['dep1'].hasError('required') && step11Form.controls['dep1'].touched">*This Field is required</span>
+    </div>
+    </div>
+<br>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-12">
+      <span class="emptxt">
+        Please tick Below if you are married in community of property or by customary law(prior to November 2000) and
+        you have obtained your spouse's permission to apply for a TFG account.
+      </span>
+      </div>
+    </div>
+
+<br>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-12">
+        <div class="emptxt">
+          <input formControlName="ch4" class="form-check-input" [ngClass]="{ 'invalid-input': step11Form.controls['ch4'].hasError('required') && step11Form.controls['ch4'].touched }" type="checkbox" value="">
+            <span style="text-indent: 0.1cm;">
+              Yes, I have received permission from spouse to sign for TFG account.
+        </span>
+        <span *ngIf="step11Form.controls['ch4'].invalid && step11Form.controls['ch4'].touched" class="error-msg">
+
+          <br>You must agree to the terms and conditions.
+
+      </span>
+      </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-12">
+        <span class="emptxt">
+            The National Credit Regulator requests us to obtain your ethnicity for statistical reporting purposes.
+        </span>
+      </div>
+    </div>
+
+    <br>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+      <select class="form-select" formControlName="dep2" [ngClass]="{ 'invalid-input': step11Form.controls['dep2'].hasError('required') && step11Form.controls['dep2'].touched }">
+        <option value="" selected>Ethnic Group</option>
+          <option value="1">White</option>
+          <option value="2">African</option>
+          <option value="2">Indian</option>
+          <option value="2">Coloured</option>
+          <option value="2">Asian</option>
+          <option value="2">I do not want to Answer</option>
+      </select>
+      <span class="error-msg" *ngIf="step11Form.controls['dep2'].hasError('required') && step11Form.controls['dep2'].touched">*This Field is required</span>
+      </div>
+    </div>
+
+    <br>
+    
+    <div class="row" style="margin-left: 21px">
+      <div class="col-6">
+        <button class="btn btn-primary" (click)="previous()" type="button" name="previous">Back</button>
+  </div>
+  <div class="col">
+    
+      <button class="btn btn-primary" (click)="next()" type="button" name="next">Next</button>
+  </div>
+</div>
+  </form>
+
+
+
+
+
+</div>
+<div *ngIf="currentStep===1 && step===3" class="container">
+  <br><br>
+  <h2 class="topic">PLEASE TELL US MORE ABOUT YOURSELF</h2>
+<br>
+  <form [formGroup]="step12Form">
+   <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+        <input formControlName="num3" type="text" class="form-control" [ngClass]="{ 'invalid-input': step12Form.controls['num3'].hasError('required') && step12Form.controls['num3'].touched }" placeholder="No. of Dependents">
+        <span class="error-msg" *ngIf="step12Form.controls['num3'].hasError('required') && step12Form.controls['num3'].touched">*This Field is required</span>
+    </div>
+    </div>
+<br>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+        <input formControlName="num4" type="text" class="form-control"[ngClass]="{ 'invalid-input': step12Form.controls['num4'].hasError('required') && step12Form.controls['num4'].touched }" placeholder="Years at current Bank">
+        <span class="error-msg" *ngIf="step12Form.controls['num4'].hasError('required') && step12Form.controls['num4'].touched">*This Field is required</span>
+    </div>
+    </div>
+<br>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-12">
+      <div class="emptxt">
+        <input style="margin-left: -31px;" [ngClass]="{ 'invalid-input': step12Form.controls['ch5'].hasError('required') && step12Form.controls['ch5'].touched }" formControlName="ch5" type="checkbox" value="" id="flexCheckDefault">
+        <span style="text-indent: 0.1cm">
+          N/A
+        </span>
+      
+        <span class="emptxt" style="margin-left: 17px;">Credit Card Expiry Date</span>
+        <span *ngIf="step12Form.controls['ch5'].invalid && step12Form.controls['ch5'].touched" class="error-msg">
+
+         <br>You must agree to the terms and conditions.
+  
+      </span>
+      </div>
+    </div>
+    </div>
+    <div class="row justify-content-md-center">
+    <div class="col col-lg-6">
+      <select class="form-select" [ngClass]="{ 'invalid-input': step12Form.controls['select3'].hasError('required') && step12Form.controls['select3'].touched }" aria-label="Default select example" formControlName="select3">
+        <option value="" selected>Month</option>
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+
+      </select>
+      <span class="error-msg" *ngIf="step12Form.controls['select3'].hasError('required') && step12Form.controls['select3'].touched">*This Field is required</span>
+    </div>
+    </div>
+    <br>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+      <select class="form-select" aria-label="Default select example" formControlName="select4" [ngClass]="{ 'invalid-input': step12Form.controls['select4'].hasError('required') && step12Form.controls['select4'].touched }">
+        <option value="" selected>Year</option>
+        <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+      </select>
+      <span class="error-msg" *ngIf="step12Form.controls['select4'].hasError('required') && step12Form.controls['select4'].touched">*This Field is required</span>
+      </div>
+    </div>
+    <br>
+    <div class="row" style="margin-left: 21px;">
+      <div class="col">
+        <button class="btn btn-primary" (click)="previous()" type="button" name="previous">Back</button>
+  </div>
+  <div class="col">
+    
+    <button class="btn btn-primary" (click)="submit()" type="button" name="next">Next</button>
+  </div>
+    </div>
+  </form>
+
+</div>

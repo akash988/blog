@@ -1,0 +1,106 @@
+<div *ngIf="currentStep===5" class="container ">
+
+  <br>
+  <h3 class="topic">FAMILY REFERNCE</h3>
+
+  <span class="emptxt">Please give details of a family member.</span>
+<br><br>
+  <form [formGroup]="step5Form">
+
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+      <select class=" form-select" aria-label="Default select example" formControlName="Relation"[ngClass]="{ 'invalid-input': step5Form.controls['Relation'].hasError('required') && step5Form.controls['Relation'].touched }">
+        <option value="" selected>Relation to you</option>
+        <option value="1">Husband</option>
+        <option value="2">Father</option>
+        <option value="3">Mother</option>
+        <option value="4">Wife</option>
+        <option value="5">Guardian</option>
+        <option value="6">Partner</option>
+        <option value="7">Other</option>
+      </select>  
+      <span class="error-msg" *ngIf="step5Form.controls['Relation'].hasError('required') && step5Form.controls['Relation'].touched">*This Field is required</span>
+      </div>
+    </div>
+   <br>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+      <input formControlName="Fn" pattern="[a-zA-Z ]*" type="text" class="form-control" placeholder="First Name"
+      [ngClass]="{ 'invalid-input': (step5Form.controls['Fn'].hasError('required') && step5Form.controls['Fn'].touched) ||
+        (step5Form.controls['Fn'].hasError('pattern') && step5Form.controls['Fn'].dirty) }">
+        
+    
+    <span class="error-msg" *ngIf="step5Form.controls['Fn'].hasError('required') && step5Form.controls['Fn'].touched">*This Field is required</span>
+    <span class="error-msg" *ngIf="step5Form.controls['Fn'].hasError('pattern') && step5Form.controls['Fn'].dirty">*only alphabets are allowed</span>
+       
+      </div>
+    </div>
+    <br>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+      <input formControlName="Sn" pattern="[a-zA-Z ]*" type="text" class="form-control" placeholder="Last name"
+      [ngClass]="{ 'invalid-input': (step5Form.controls['Sn'].hasError('required') && step5Form.controls['Sn'].touched) ||
+      (step5Form.controls['Sn'].hasError('pattern') && step5Form.controls['Sn'].dirty) }">
+      
+  
+    <span class="error-msg" *ngIf="step5Form.controls['Sn'].hasError('required') && step5Form.controls['Sn'].touched">*This Field is required</span>
+    <span class="error-msg" *ngIf="step5Form.controls['Sn'].hasError('pattern') && step5Form.controls['Sn'].dirty">*only alphabets are allowed</span>
+  
+    </div>
+    </div>
+    <br>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+      <input formControlName="Contact" pattern="[0-9]{10}" type="text" class="form-control" placeholder="Contact Number"
+      [ngClass]="{ 'invalid-input': (step5Form.controls['Contact'].hasError('required') && step5Form.controls['Contact'].touched) ||
+      (step5Form.controls['Contact'].hasError('pattern') && step5Form.controls['Contact'].dirty) }">
+      
+      <span class="error-msg" *ngIf="(step5Form.controls['Contact'].hasError('pattern') && step5Form.controls['Contact'].dirty) || 
+      step5Form.controls['Contact'].hasError('required') && step5Form.controls['Contact'].touched">*please enter valid Telephone number</span>
+    </div>
+    </div>
+    <br><br>
+    <h3 class="topic">PERSONAL REFERNCE</h3>
+
+    <h6 class="emptxt">Please give details of a friend or family member not living with you</h6>
+<br>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+        <input type="text" pattern="[a-zA-Z ]*" formControlName="FN" class="form-control" 
+        [ngClass]="{ 'invalid-input': (step5Form.controls['FN'].hasError('required') && step5Form.controls['FN'].touched) ||
+            (step5Form.controls['FN'].hasError('pattern') && step5Form.controls['FN'].dirty) }" placeholder="First Name">
+            
+        
+        <span class="error-msg" *ngIf="step5Form.controls['FN'].hasError('required') && step5Form.controls['FN'].touched">*This Field is required</span>
+        <span class="error-msg" *ngIf="step5Form.controls['FN'].hasError('pattern') && step5Form.controls['FN'].dirty">*only alphabets are allowed</span>
+      </div>
+    </div>
+    <br>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+        <input type="text" pattern="[a-zA-Z ]*" formControlName="SN" class="form-control" 
+    [ngClass]="{ 'invalid-input': (step5Form.controls['SN'].hasError('required') && step5Form.controls['SN'].touched) ||
+        (step5Form.controls['SN'].hasError('pattern') && step5Form.controls['SN'].dirty) }" placeholder="First Name">
+        
+    
+    <span class="error-msg" *ngIf="step5Form.controls['SN'].hasError('required') && step5Form.controls['SN'].touched">*This Field is required</span>
+    <span class="error-msg" *ngIf="step5Form.controls['SN'].hasError('pattern') && step5Form.controls['SN'].dirty">*only alphabets are allowed</span>
+  
+     </div>
+    </div>
+    <br>
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+      <input formControlName="Ph" pattern="[0-9]{10}" type="text" class="form-control" placeholder="Contact Number"
+      [ngClass]="{ 'invalid-input': (step5Form.controls['Ph'].hasError('required') && step5Form.controls['Ph'].touched) ||
+      (step5Form.controls['Ph'].hasError('pattern') && step5Form.controls['Ph'].dirty) }">
+      
+      <span class="error-msg" *ngIf="(step5Form.controls['Ph'].hasError('pattern') && step5Form.controls['Ph'].dirty) || 
+      step5Form.controls['Ph'].hasError('required') && step5Form.controls['Ph'].touched">*please enter valid Telephone number</span>
+   </div>
+    </div>
+
+    
+  </form>
+  
+</div>

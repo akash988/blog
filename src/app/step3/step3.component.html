@@ -1,0 +1,187 @@
+
+
+<div *ngIf="currentStep===3" class="container">
+    <br>
+    <h4 class="topic" >PLEASE COMPLETE YOUR INCOME AND EXPENSE DETAILS</h4>
+    <label class="emptxt">TFG will use the income and expense information provided by you, plus your bureau commitments, to ensure that we
+    give you a credit limit that you can afford.</label>
+     <br>
+    <br>  
+    <h4 class="topic">MONTHLY INCOME</h4>
+    <br>
+    <label class="emptxt">Please enter 0 if not applicable.</label><br>
+    <label style="font-size: 13px;">Child grants must be excluded.</label><br><br>
+
+
+    <form [formGroup]="step3Form">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-6">
+                <input formControlName="sal" pattern="[0-9]*" type="phonerentber" class="form-control"
+                placeholder="Monthly Salary Before Deductions"[ngClass]="{ 'invalid-input': (step3Form.controls['sal'].hasError('required') && step3Form.controls['sal'].touched) ||
+                (step3Form.controls['sal'].hasError('pattern') && step3Form.controls['sal'].dirty) }">
+                <span class="error-msg" *ngIf="(step3Form.controls['sal'].hasError('pattern') && step3Form.controls['sal'].dirty) || 
+                step3Form.controls['sal'].hasError('required') && step3Form.controls['sal'].touched">*please enter valid Salary</span>
+            </div>
+        </div>
+        <br>
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-6">
+            <input formControlName="inc" pattern="[0-9]*" type="text" class="form-control" placeholder="Other Income(eg. allowances)"
+            [ngClass]="{ 'invalid-input':
+                (step3Form.controls['inc'].hasError('pattern') && step3Form.controls['inc'].dirty) }">
+                <span class="error-msg" *ngIf="(step3Form.controls['inc'].hasError('pattern') && step3Form.controls['inc'].dirty)">*please enter valid Income</span>
+        </div>
+        </div>
+
+       <br>
+       <div class="emptxt">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-12">
+                <div class="col col1" >if required, may we obtain your pay slip from a third party on your behalf to verify your monthly income?
+                </div>
+                <div class="col col2" style="margin-top: 7px;margin-right: 5px;">
+                    <input type="radio" name="agree" value="yes" formControlName="radiobtn1">Yes &nbsp;
+                    <input type="radio" name="agree" value="no" formControlName="radiobtn1">No
+                </div>
+                <div class="error-msg" *ngIf="step3Form.controls['radiobtn1'].touched && step3Form.controls['radiobtn1'].invalid">
+
+                    Please select an option.
+
+                </div>
+                
+            </div>
+          </div>
+        </div>
+          <br>
+
+        <h4 class="topic">MONTHLY EXPENSES</h4>
+
+        <label class="emptxt">Please enter 0 if not applicable.</label>
+        <br><br>
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-6">
+
+            <input formControlName="rent" pattern="[0-9]*" type="text" class="form-control" placeholder="Rent"
+            [ngClass]="{ 'invalid-input': (step3Form.controls['rent'].hasError('required') && step3Form.controls['rent'].touched) ||
+            (step3Form.controls['rent'].hasError('pattern') && step3Form.controls['rent'].dirty) }"placeholder="Rent *">
+            
+            <span class="error-msg" *ngIf="(step3Form.controls['rent'].hasError('pattern') && step3Form.controls['rent'].dirty) || 
+            step3Form.controls['rent'].hasError('required') && step3Form.controls['rent'].touched">*please enter valid Rent Amount</span>
+         
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-6">
+
+            <label class="form-label"></label>
+            <input formControlName="loan" pattern="[0-9]*" type="text" class="form-control" placeholder="Home Loan Repayments"[ngClass]="{ 'invalid-input': (step3Form.controls['loan'].hasError('required') && step3Form.controls['loan'].touched) ||
+            (step3Form.controls['loan'].hasError('pattern') && step3Form.controls['loan'].dirty) }"placeholder="Loan *">
+            
+            <span class="error-msg" *ngIf="(step3Form.controls['loan'].hasError('pattern') && step3Form.controls['loan'].dirty) || 
+            step3Form.controls['loan'].hasError('required') && step3Form.controls['loan'].touched">*please enter valid Loan Amount</span>
+         </div>
+        </div>
+        <br>
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-6">
+
+            <input formControlName="tax" type="text" pattern="[0-9]*" class="form-control" placeholder="Levy/Rates/Taxes"[ngClass]="{ 'invalid-input': (step3Form.controls['tax'].hasError('required') && step3Form.controls['tax'].touched) ||
+            (step3Form.controls['tax'].hasError('pattern') && step3Form.controls['tax'].dirty) }">
+            
+            <span class="error-msg" *ngIf="(step3Form.controls['tax'].hasError('pattern') && step3Form.controls['tax'].dirty) || 
+            step3Form.controls['tax'].hasError('required') && step3Form.controls['tax'].touched">*please enter valid Amount</span>
+         
+            </div>
+        </div>
+        <br>
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-6">
+
+            <input formControlName="support" pattern="[0-9]*" type="text" class="form-control" placeholder="Child Support/Maintenance"[ngClass]="{ 'invalid-input': (step3Form.controls['support'].hasError('required') && step3Form.controls['support'].touched) ||
+            (step3Form.controls['support'].hasError('pattern') && step3Form.controls['support'].dirty) }">
+            
+            <span class="error-msg" *ngIf="(step3Form.controls['support'].hasError('pattern') && step3Form.controls['support'].dirty) || 
+            step3Form.controls['support'].hasError('required') && step3Form.controls['support'].touched">*please enter valid Amount</span>
+            
+        </div>
+        </div>
+<br>
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-6">
+
+            <input formControlName="med" pattern="[0-9]*" type="text" class="form-control" placeholder="Medical Aid"[ngClass]="{ 'invalid-input': (step3Form.controls['med'].hasError('required') && step3Form.controls['med'].touched) ||
+            (step3Form.controls['med'].hasError('pattern') && step3Form.controls['med'].dirty) }">
+            
+            <span class="error-msg" *ngIf="(step3Form.controls['med'].hasError('pattern') && step3Form.controls['med'].dirty) || 
+            step3Form.controls['med'].hasError('required') && step3Form.controls['med'].touched">*please enter valid Amount</span>
+         
+        </div>
+        </div>
+        
+<br>
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-6">
+            <input formControlName="poli" pattern="[0-9]*" type="text" class="form-control" placeholder="Policies"[ngClass]="{ 'invalid-input': (step3Form.controls['poli'].hasError('required') && step3Form.controls['poli'].touched) ||
+            (step3Form.controls['poli'].hasError('pattern') && step3Form.controls['poli'].dirty) }">
+            
+            <span class="error-msg" *ngIf="(step3Form.controls['poli'].hasError('pattern') && step3Form.controls['poli'].dirty) || 
+            step3Form.controls['poli'].hasError('required') && step3Form.controls['poli'].touched">*please enter valid Amount</span>
+         
+            </div>
+        </div>
+        <br>
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-6">
+            <input formControlName="cell" pattern="[0-9]{10}" type="text" class="form-control" placeholder="Prepaid Cellular"[ngClass]="{ 'invalid-input': (step3Form.controls['cell'].hasError('required') && step3Form.controls['cell'].touched) ||
+            (step3Form.controls['cell'].hasError('pattern') && step3Form.controls['cell'].dirty) }">
+            
+            <span class="error-msg" *ngIf="(step3Form.controls['cell'].hasError('pattern') && step3Form.controls['cell'].dirty) || 
+            step3Form.controls['cell'].hasError('required') && step3Form.controls['cell'].touched">*please enter valid Cellphone number</span>
+                </div>
+        </div>
+        <br>
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-6">
+
+            <input formControlName="trans" pattern="[0-9]*" type="text" class="form-control" placeholder="Transport Expenses"[ngClass]="{ 'invalid-input': (step3Form.controls['trans'].hasError('required') && step3Form.controls['trans'].touched) ||
+            (step3Form.controls['trans'].hasError('pattern') && step3Form.controls['trans'].dirty) }">
+            
+            <span class="error-msg" *ngIf="(step3Form.controls['trans'].hasError('pattern') && step3Form.controls['trans'].dirty) || 
+            step3Form.controls['trans'].hasError('required') && step3Form.controls['trans'].touched">*please enter valid Amount</span>
+         
+        </div>
+        </div>
+        <br>
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-6">
+            <input formControlName="expense" pattern="[0-9]*" type="text" class="form-control"
+                placeholder="Other Monthly Living Expenses"[ngClass]="{ 'invalid-input': (step3Form.controls['expense'].hasError('required') && step3Form.controls['expense'].touched) ||
+                (step3Form.controls['expense'].hasError('pattern') && step3Form.controls['expense'].dirty) }">
+                
+                <span class="error-msg" *ngIf="(step3Form.controls['expense'].hasError('pattern') && step3Form.controls['expense'].dirty) || 
+                step3Form.controls['expense'].hasError('required') && step3Form.controls['expense'].touched">*please enter valid Expence Amount</span>
+             
+            </div>
+        </div>
+        
+        <br>
+        <div class="emptxt">
+            <div class="row justify-content-md-center">
+                <div class="col col-lg-12">
+                    <div class="col col1" >if required, may we obtain your pay slip from a third party on your behalf to verify your monthly income?
+                    </div>
+                    <div class="col col2" style="margin-top: 7px;margin-right: 5px;">
+                        <input type="radio" name="agree1" value="yes" formControlName="radiobtn2">Yes &nbsp;
+                        <input type="radio" name="agree1" value="no" formControlName="radiobtn2">No
+                    </div>
+                    <div class="error-msg" *ngIf="step3Form.controls['radiobtn2'].touched && step3Form.controls['radiobtn2'].invalid">
+    
+                        Please select an option.
+    
+                    </div>
+                    
+                </div>
+              </div>
+            </div>
+    </form>
+</div>

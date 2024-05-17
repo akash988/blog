@@ -1,0 +1,97 @@
+<div *ngIf="currentStep===2" class=" container row g-3 needs-validation" novalidate>
+  <span style="margin-top: 15px;" class="topic">PLEASE COMPLETE YOUR EMPLOYMENT DETAILS</span>
+  <span class="emptxt">Please specify your type of Employment </span>
+
+<br><br>
+
+
+  <form [formGroup]="step2Form">
+
+    <div class="cont">
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+      <select class=" form-select" aria-label="Default select example" formControlName="orgName" [ngClass]="{ 'invalid-input': step2Form.controls['orgName'].hasError('required') && step2Form.controls['orgName'].touched }">
+        <option value="" selected>Employment Type</option>
+        <option value="1">Permanently Employed</option>
+        <option value="2">Self Employed</option>
+        <option value="3">Employed on Contract Basis</option>
+        <option value="4">Home Executive(House Wife)</option>
+        <option value="5">Student</option>
+        <option value="6">Retired</option>
+        <option value="7">Receive a State Grant</option>
+        <option value="8">Not Employed</option>
+      </select>
+      <span class="error-msg" *ngIf="step2Form.controls['orgName'].hasError('required') && step2Form.controls['orgName'].touched">*This Field is required</span>
+      </div>
+    </div>
+    <br>
+
+
+
+
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+      <select class=" form-select" aria-label="Default select example" formControlName="dep"[ngClass]="{ 'invalid-input': step2Form.controls['dep'].hasError('required') && step2Form.controls['dep'].touched }">
+        <option value="" selected>Type Of Student</option>
+        <option value="1">Full Time</option>
+        <option value="2">Part Time</option>
+        </select>
+      <span class="error-msg" *ngIf="step2Form.controls['dep'].hasError('required') && step2Form.controls['dep'].touched">*This Field is required</span>
+    </div>
+    </div>
+    <br>
+    
+    <div class="row justify-content-md-center">
+      <div class="col col-lg-6">
+       <select class=" form-select" aria-label="Default select example" formControlName="pos"[ngClass]="{ 'invalid-input': step2Form.controls['pos'].hasError('required') && step2Form.controls['pos'].touched }">
+       <option value="" selected>Employment Category</option>
+        <option value="1">Marketing/Media/Sales</option>
+        <option value="2">IT / Science / Medical / Research</option>
+        <option value="3">Security / Defence</option>
+        <option value="4">Legal/ Financial services</option>
+        <option value="5">Engineering / Architecture</option>
+        <option value="6">Catering / Entertainment / Accommodation</option>
+        <option value="7">Skilled labour / Artisan</option>
+        <option value="8">Domestic worker / Labourer</option>
+        <option value="9">Admin/ Office Support</option>
+        <option value="10">Government Department</option>
+        <option value="11">Driver (bus, taxi, truck, train)</option>
+        <option value="12">Other Professional Services</option>
+      </select>
+      <span class="error-msg" *ngIf="step2Form.controls['pos'].hasError('required') && step2Form.controls['pos'].touched">*This Field is required</span>
+      </div>
+    </div>
+<br>
+
+
+<div class="row justify-content-md-center">
+  <div class="col col-lg-6">
+      <select class=" form-select" aria-label="Default select example" formControlName="position"[ngClass]="{ 'invalid-input': step2Form.controls['position'].hasError('required') && step2Form.controls['position'].touched }">
+        <option value="" selected>Employment Level</option>
+        <option value="1">Junior/Mid-Level</option>
+        <option value="2">Senior Manager</option>
+        <option value="3">Executive</option>
+     </select>
+      <span class="error-msg" *ngIf="step2Form.controls['position'].hasError('required') && step2Form.controls['position'].touched">*This Field is required</span>
+    </div>
+</div>
+<br>
+
+<div class="row justify-content-md-center">
+  <div class="col col-lg-6">
+      <input formControlName="org" type="phoneNumber" class="form-control" placeholder="Educational Institution" id="validationCustom03" required [ngClass]="{ 'invalid-input': step2Form.controls['org'].hasError('required') && step2Form.controls['org'].touched }">
+      <span class="error-msg" *ngIf="step2Form.controls['org'].hasError('required') && step2Form.controls['org'].touched">*This Field is required</span>
+    </div>
+</div>
+<br>
+    
+<div class="row justify-content-md-center">
+  <div class="col col-lg-6">
+      <input formControlName="org1" type="phoneNumber" class="form-control" placeholder="Employer Name" id="validationCustom03" required [ngClass]="{ 'invalid-input': step2Form.controls['org1'].hasError('required') && step2Form.controls['org1'].touched }">
+      <span class="error-msg" *ngIf="step2Form.controls['org1'].hasError('required') && step2Form.controls['org1'].touched">*This Field is required</span>
+  </div>
+    </div>
+  <br>
+    </div>
+  </form>
+</div>

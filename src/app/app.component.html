@@ -1,0 +1,54 @@
+<div class="container text-center" style="max-width: 600px;">  
+  <!-- stepper-container -->
+  <!-- infoTabs -->
+  <div class="row justify-content-md-center">
+  <div class="st">
+  <div class="row justify-content-md-center">
+    <div style="display:flex">
+      <div class="col col-md-2"  *ngFor=" let step of [1, 2, 3, 4, 5, 6];let i=index">
+        <div class="col col-md-1" style="font-size: xx-small;width:100%;">{{Data[i]}}</div>
+        <div style="margin-top: 4px;" class="step-number"  [ngClass]="{ 'active': step === currentStep,'completed': i < currentStep}">{{ step }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="step-content">
+    <app-step1 #cStep1 [currentStep]="currentStep" (nextStep)="nextStep($event)"></app-step1>
+  </div>
+ 
+  <div class="step-content">
+    <app-step2 #cStep2 [currentStep]="currentStep" (nextStep)="nextStep($event)"></app-step2>
+  </div>
+  <div class="step-content">
+    <app-step3 #cStep3 [currentStep]="currentStep" (nextStep)="nextStep($event)"></app-step3>
+  </div>
+  <div class="step-content">
+
+    <app-step4 #cStep4 [currentStep]="currentStep" (nextStep)="nextStep($event)"></app-step4>
+
+  </div>
+  <div class="step-content">
+    <app-step5 #cStep5 [currentStep]="currentStep" (nextStep)="nextStep($event)"></app-step5>
+  </div>
+  <div class="step-content">
+    <app-step6 #cStep6 [currentStep]="currentStep" (nextStep)="nextStep($event)"></app-step6>
+  </div>
+
+  <div class="actions">
+    <button class="btn" (click)="previousStep()"
+      [hidden]="(currentStep===1 && cStep1.step===1) || (currentStep===1 && cStep1.step===2) || (currentStep===1 && cStep1.step===3) || (currentStep===6 && cStep6.step6===2) || (currentStep===6 && cStep6.step6===1)|| (currentStep===6 && cStep6.step6===3)"
+      [disabled]="currentStep === 1">Back</button>
+    <button class="btn"
+      (click)="(currentStep===1 && cStep1.submit())|| (currentStep===2 && cStep2.onSubmit()) || (currentStep===3 && cStep3.onSubmit3()) ||(currentStep===4 && cStep4.onSubmit4()) || (currentStep===5 && cStep5.onSubmit5()) || (currentStep===6 && cStep6.onSubmit6()) "
+      [hidden]="(currentStep===1 && cStep1.step===1) || (currentStep===1 && cStep1.step===2) || (currentStep===1 && cStep1.step===3)"
+      *ngIf="currentStep != 6">Next</button>
+    <!-- <button type="submit" class="btn4 btn " *ngIf="(currentStep == 6 && cStep6.step6==3)"
+      (click)="submitStep()">Submit</button> -->
+    <button class="btn3 btn" (click)="previousStep()"
+      [hidden]="(currentStep===1 && cStep1.step===1) || (currentStep===1 && cStep1.step===2) || (currentStep===1 && cStep1.step===3) ||currentStep==2 || currentStep===3 || currentStep===4 || currentStep===5 || (currentStep===6 && cStep6.step6===2) || (currentStep===6 && cStep6.step6===3)"
+      [disabled]="currentStep === 1">Back</button>
+  
+    </div>
+    </div> 
+</div>
